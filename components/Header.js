@@ -23,7 +23,7 @@ const Header = () => {
             objectFit="contain"
           />
         </div>
-        <div className="relative cursor-pointer lg:hidden w-10 flex-shrink-0">
+        <div className="relative cursor-pointer lg:hidden w-8 flex-shrink-0">
           <Image
             alt=""
             src="https://links.papareact.com/jjm"
@@ -32,7 +32,7 @@ const Header = () => {
           />
         </div>
         {/* Middle */}
-        <div className="max-w-xs">
+        <div className="md:max-w-xs max-w-[180px]">
           <div className="mt-1 p-3 rounded-md relative">
             <div className="absolute inset-y-0 pl-3 pointer-events-none flex items-center">
               <SearchIcon className="w-5 text-gray-500" />

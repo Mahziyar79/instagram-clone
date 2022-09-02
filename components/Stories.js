@@ -29,7 +29,7 @@ const Stories = () => {
 
   
   return (
-    <div className="flex border border-gray-200 overflow-x-scroll p-6 space-x-5 mt-8 rounded-sm bg-white scrollbar-thin scrollbar-thumb-black">
+    <div className="flex border border-gray-200 overflow-x-scroll p-6 md:mx-0 m-3 space-x-5 mt-8 rounded-sm bg-white scrollbar-thin scrollbar-thumb-black">
       {users.map((profile) => (
         <Story
           key={profile.userId}
