@@ -22,7 +22,6 @@ const Suggestions = () => {
     });
     setSuggestionsData(suggestions);
   }, []);
-  console.log(suggestionsData);
 
   return (
     <div className="mt-4 ml-10">
@@ -41,7 +40,7 @@ const Suggestions = () => {
             <h2 className="font-semibold text-sm">{suggestion.username}</h2>
             <h3 className="text-xs text-gray-400">Works at {suggestion.company}</h3>
           </div>
-          <butto className="text-xs font-bold text-blue-400">Follow</butto>
+          <button className="text-xs font-bold text-blue-400">Follow</button>
         </div>
       ))}
     </div>
