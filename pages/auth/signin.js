@@ -1,9 +1,12 @@
 import { getProviders, signIn as signIntoProvider } from "next-auth/react";
 import Header from "../../components/Header";
+import Modal from "../../components/Modal";
 
 export default function SignIn({ providers }) {
   return (
     <>
+      <Modal />
+
       <Header />
       <div className="flex flex-col items-center justify-center min-h-screen py-2 -mt-32 px-14 text-center">
         <img src="https://links.papareact.com/ocw" className="w-80" alt="" />

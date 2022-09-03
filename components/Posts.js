@@ -1,6 +1,9 @@
 import Post from "./Post";
 import profileImg from "../public/images/image.jpg";
 import marketing from "../public/images/marketing.jpg";
+import { useEffect, useState } from "react";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { db } from "../firebase";
 
 const posts = [
   {
@@ -30,10 +33,27 @@ const posts = [
 ];
 
 const Posts = () => {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    const unsubscribe = onSnapshot(
+      query(collection(db, "posts"), orderBy("timestamp", "desc")),
+      (snapshot) => {
+        setPosts(snapshot.docs);
+      }
+    );
+
+    return () => {
+      unsubscribe();
+    };
+  }, [db]);
+
   return (
     <div>
       {posts.map((post) => (
-        <Post key={post.id} post={post} />
+        <>
+          <Post key={post.id} post={post} />
+          {console.log(post.data())}
+        </>
       ))}
     </div>
   );

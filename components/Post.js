@@ -13,13 +13,13 @@ const Post = ({ post }) => {
     <div className="border bg-white my-7 rounded-sm mx-3 md:mx-0">
       {/* Header */}
       <div className="flex items-center p-5">
-        <img src={post.userImg.src} className="h-12 rounded-full object-contain border p-1 mr-3" alt="" />
-        <p className="flex-1 font-bold">{post.username}</p>
+        <img src={post.data().profileImg} className="h-12 rounded-full object-contain border p-1 mr-3" alt="" />
+        <p className="flex-1 font-bold">{post.data().username}</p>
         <DotsHorizontalIcon className="h-5 cursor-pointer" />
       </div>
 
       {/* Img */}
-      <img src={post.img.src} className="object-cover w-full" alt="" />
+      <img src={post.data().image} className="object-cover w-full" alt="" />
 
       {/* Buttons */}
       <div className="flex justify-between items-center px-4 pt-4">
@@ -33,8 +33,8 @@ const Post = ({ post }) => {
 
       {/* caption */}
       <p className="truncate p-4">
-        <span className="font-bold mr-1">{post.username}</span>
-        {post.caption} 
+        <span className="font-bold mr-1">{post.data().username}</span>
+        {post.data().caption} 
       </p>
 
       {/* comments */}
