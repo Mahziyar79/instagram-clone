@@ -8,21 +8,24 @@ const posts = [
     username: "Mahziyar",
     userImg: profileImg,
     img: marketing,
-    caption: "Subscribe Meeee!!",
+    caption:
+      "In publishing and graphic design, Lorem ipsum is a placeholder text",
   },
   {
     id: "124",
     username: "Mahziyar79",
     userImg: profileImg,
     img: marketing,
-    caption: "Subscribe Meeee!!",
+    caption:
+      "In publishing and graphic design, Lorem ipsum is a placeholder text",
   },
   {
     id: "125",
     username: "Mahziyar Glp",
     userImg: profileImg,
     img: marketing,
-    caption: "Subscribe Meeee!!",
+    caption:
+      "In publishing and graphic design, Lorem ipsum is a placeholder text",
   },
 ];
 
@@ -30,7 +33,7 @@ const Posts = () => {
   return (
     <div>
       {posts.map((post) => (
-        <Post key={post.id} post={post}/>
+        <Post key={post.id} post={post} />
       ))}
     </div>
   );
