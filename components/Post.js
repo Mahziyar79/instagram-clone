@@ -56,15 +56,16 @@ const Post = ({ post }) => {
 
   const sendComment = async (e) => {
     e.preventDefault();
-
-    const commentToSend = comment;
-    setComment("");
-    await addDoc(collection(db, "posts", post.id, "comments"), {
-      comment: commentToSend,
-      username: session.user.username,
-      userImage: session.user.image,
-      timestamp: serverTimestamp(),
-    });
+    if (comment) {
+      const commentToSend = comment;
+      setComment("");
+      await addDoc(collection(db, "posts", post.id, "comments"), {
+        comment: commentToSend,
+        username: session.user.username,
+        userImage: session.user.image,
+        timestamp: serverTimestamp(),
+      });
+    }
   };
 
   const likePost = async () => {
@@ -98,7 +99,10 @@ const Post = ({ post }) => {
         <div className="flex justify-between items-center px-4 pt-4">
           <div className="flex items-center space-x-3">
             {hasLiked ? (
-              <HeartIconFilled onClick={likePost} className="btn text-red-500" />
+              <HeartIconFilled
+                onClick={likePost}
+                className="btn text-red-500"
+              />
             ) : (
               <HeartIcon onClick={likePost} className="btn" />
             )}
@@ -111,7 +115,9 @@ const Post = ({ post }) => {
 
       {/* caption */}
       <p className="truncate p-4">
-        {likes.length > 0 && <p className="font-bold mb-1">{likes.length} likes</p>}
+        {likes.length > 0 && (
+          <p className="font-bold mb-1">{likes.length} likes</p>
+        )}
         <span className="font-bold mr-1">{post.data().username}</span>
         {post.data().caption}
       </p>
