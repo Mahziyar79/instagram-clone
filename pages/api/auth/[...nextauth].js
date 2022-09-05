@@ -10,6 +10,7 @@ export default NextAuth({
     }),
     // ...add more providers here
   ],
+  secret: 'Instagram-Clone' ,
   pages: {
     signIn: "/auth/signin",
   },
