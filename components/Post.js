@@ -159,7 +159,7 @@ const Post = ({ post }) => {
             onChange={(e) => setComment(e.target.value)}
             value={comment}
           />
-          <button className="font-semibold text-blue-400" type="submit">
+          <button disabled={!comment} className="font-semibold text-blue-400" type="submit">
             Post
           </button>
         </form>
