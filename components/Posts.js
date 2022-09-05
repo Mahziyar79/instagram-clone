@@ -50,10 +50,7 @@ const Posts = () => {
   return (
     <div>
       {posts.map((post) => (
-        <>
           <Post key={post.id} post={post} />
-          {console.log(post.data())}
-        </>
       ))}
     </div>
   );
