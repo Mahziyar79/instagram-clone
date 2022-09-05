@@ -55,9 +55,8 @@ const Header = () => {
 
         <div className="flex items-center justify-end space-x-3">
           <HomeIcon onClick={()=>router.push('/')} className="navBtn" />
-          {session && (
-            <PlusCircleIcon onClick={() => setOpen(!open)} className="w-6 md:hidden cursor-pointer" />
-          )}
+          {/* <MenuIcon className="w-6 md:hidden cursor-pointer" /> */}
+          
           {session ? (
             <>
               <div className="relative">
@@ -66,7 +65,7 @@ const Header = () => {
                   3
                 </span>
               </div>
-              <PlusCircleIcon onClick={()=>setOpen(!open)} className="navBtn" />
+              <PlusCircleIcon onClick={()=>setOpen(!open)} className="w-6 cursor-pointer" />
               <UserGroupIcon className="navBtn" />
               <HeartIcon className="navBtn" />
               <img
@@ -75,6 +74,7 @@ const Header = () => {
                 src={session.user.image}
                 alt="profile img"
               />
+              
             </>
           ) : (
             <button onClick={signIn}>SignIn</button>
